@@ -1,0 +1,171 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=K2D&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@500&display=swap');
+
+/* ______________________________________________ */
+/* Reset (básico) */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Patrick Hand', sans-serif;
+    width: 68;
+}
+
+html {
+    /* variáveis em css */
+    --corPrimária: #017143;
+
+    --corSecundária: #333;
+
+    --corTerciária: #fff;
+}
+
+main {
+    position: relative;
+    width: 100%;
+    min-width: 100vh; /* altura de 1 tela (view height) */
+    padding: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--corTerciária);  /*chamada de variável (cor) */
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    position: relative;
+    max-width: 80px;
+}
+
+header .logo:hover {
+     filter: invert(0.1); /* Controla o nível de contrate */
+}
+
+header ul {
+    position: relative;
+    display: flex; /* Põe os links em linhas (menu) */
+}
+
+header ul li {
+   list-style: none;  /* Remove o estilo da lista (bolinha) */
+}
+
+header ul li a {
+    display: inline-block; /* Garante que o link fiquei sempre na linha */
+    color: var(--corSecundária);
+    font-size: 20px;
+    font-weight: 400;
+    text-decoration: none;
+    padding: 5px;
+    margin-left: 40px;
+}
+
+header ul li a:hover {
+    background-color: var(--corPrimária);
+    color: var(--corTerciária);
+    border-radius: 10px;
+}
+
+.conteúdo {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.conteúdo .textoPrincipal {
+    position: relative;
+    max-width: 600px; /*largura área de texto*/
+}
+
+.conteúdo .textoPrincipal h2 {
+    color: var(--corSecundária);
+    font-size: 2,5em; /* 1em = 1 x tamanho fonte elemento (16px) */
+    line-height: 1,5em; /*espaçamento vertical*/
+    font-weight: 400;
+    font-family: 'Baloo Bhai 2', cursive;
+}
+
+.conteúdo .textoPrincipal h2 span {
+    color: var(--corPrimária);
+    font-size: 1.2em;
+    font-weight: 900;
+    font-family: 'Bowlby One SC', cursive;
+}
+
+.conteúdo .textoPrincipal p {
+    color: var(--corSecundária);
+    font-family: 'K2D', sans-serif;
+    
+}
+
+.conteúdo .textoPrincipal a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 8px 20px;
+    background-color: var(--corPrimária);
+    color: var(--corTerciária);
+    border-radius: 40px;
+    font-weight: 600;
+    letter-spacing: 1px; /*Espaço entre os caracteres*/
+    text-decoration: none;
+}
+
+.conteúdo .textoPrincipal a:hover {
+    background-color: var(--corSecundária);
+    color: var(--corTerciária);
+}
+
+.conteúdo .imgBox {
+    width: 600px;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 50px;
+    margin-top: 50px;
+}
+
+.conteúdo .imgBox img {
+    max-width: 340px;
+}
+
+.sorvetes {
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    transform: translate(-50%);
+    display: flex;
+}
+
+.sorvetes li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    cursor: pointer; /*transforma o cursor em uma mão*/
+    transition: 0.5s; /* tempo de transição */
+}
+
+.sorvetes li:hover {
+    transform: translateY(-15px); /* Movimenta 15px no eixo Y */
+}
+
+.sorvetes li img {
+    max-width: 60px;
+}
+
+
+
