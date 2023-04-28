@@ -69,9 +69,9 @@ header ul li a {
     color: var(--corSecundária);
     font-size: 20px;
     font-weight: 400;
-    text-decoration: none;
+    text-decoration: none; /* REmove o underline*/
     padding: 5px;
-    margin-left: 40px;
+    margin-left: 40px; /*Espaça os links entre si*/
 }
 
 header ul li a:hover {
@@ -95,9 +95,9 @@ header ul li a:hover {
 
 .conteúdo .textoPrincipal h2 {
     color: var(--corSecundária);
-    font-size: 2,5em; /* 1em = 1 x tamanho fonte elemento (16px) */
-    line-height: 1,5em; /*espaçamento vertical*/
-    font-weight: 400;
+    font-size: 2.5em; /* 1em = 1 x tamanho fonte elemento (16px) */
+    line-height: 1.5em; /* espaçamento vertical */
+    font-weight: 500;
     font-family: 'Baloo Bhai 2', cursive;
 }
 
@@ -129,6 +129,10 @@ header ul li a:hover {
 .conteúdo .textoPrincipal a:hover {
     background-color: var(--corSecundária);
     color: var(--corTerciária);
+    border-radius: 40px;
+    font-weight: 500;
+    letter-spacing: 1px; /*Espaçamento entre as letras */
+    text-decoration: none;
 }
 
 .conteúdo .imgBox {
@@ -147,7 +151,7 @@ header ul li a:hover {
     position: absolute;
     left: 50%;
     bottom: 20px;
-    transform: translate(-50%);
+    transform: translateX(-50%);
     display: flex;
 }
 
@@ -167,5 +171,165 @@ header ul li a:hover {
     max-width: 60px;
 }
 
+/* Imagem das redes sociais */
+.sociais {
+    position:absolute;
+    top: 50%;
+    right: 30px;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 
+.sociais li {
+    list-style: none;
+}
 
+.sociais li a {
+    display: inline-block;
+    margin: 5px 0;
+    transform: scale(0.6); /* Reduz o tamanho dos ícones */
+    filter: invert(1); /* Inverte a cor para branco */
+}
+
+.sociais li a:hover {
+    /*Color: #333;*/
+    color: var(--corSecundária);
+    filter: invert(0);
+}
+
+/* _____________________________________________________________________________ */
+/* Círculo */
+
+.círculo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background: #017143; */
+    background-color: var(--corPrimária);
+    
+/* https://bennettfeely.com/clippy/ */
+/* https://www.w3schools.com/cssref/css3_pr_clip-path.php */
+
+/* Tamanho -> Lado -> posição */
+clip-path: circle(600px at right 800px);
+}
+
+/* ____________________________________________________________________________ */
+/* Responsividade */
+
+/* https://www.w3schools.com/howto/howto_css_media_query_breakpoints.asp */
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+/* Medium devices (landscape tablets, 768px and up) */
+/* Large devices (laptops/desktops, 992px and up) */
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+
+/* Abaixo de 992px */
+@media (max-width: 992px) {
+
+    header {
+        padding: 20px;
+    }
+}
+
+header .logo {
+    max-width: 60px; /* Era 80px agora vira 60px (Reduz) */
+}
+
+header ul {
+    display: none; /* Esconde o menu abaixo de 992px */
+}
+
+/* Menu hambúguer */
+.toogle {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    background:  url(assets/menu.png); /* Imagem do hambúrguer*/
+    background-size: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: invert(1);
+    z-index: 11;
+}
+
+.toogle.active {
+    position: fixed;
+    right: 20px;
+    background: url(assets/close.png); /* Imagem do X (Fechar) */
+    background-size: 25px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Menu hambúrguer ativado (forma a lista) */
+header ul.links.active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; /* Largura da lista do hambúrguer quando ativo */
+    height: 45%; /* Altura da lista do hambúrguer quando ativo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #f2f2f2;
+    z-index: 10;
+}
+
+header ul li a { 
+    font-size: 1.5em;
+    margin: 5px 0;
+}
+
+/* _______________________________________________________ */
+/* Neste  ponto fazer JS (1ª função) */
+
+/* Conteúdo */
+main {
+    padding: 20px 20px 120px;
+}
+
+.conteúdo {
+    flex-direction: column; /* Joga o conteúdo em coluna (Blocos) */
+    margin-top: 100px;
+}
+
+.conteúdo .textoPrincipal h2 {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+}
+
+.conteúdo .textoPrincipal {
+    max-width: 100%;
+}
+
+.conteúdo .imgBox {
+    max-width: 300px;
+}
+
+.thumb li img {
+    max-width: 40px;
+}
+
+.circulo {
+    clip-path: circle(400px at center bottom);
+}
+
+.sociais {
+    /* Estilizaos sociais */
+    /* background: #017143; */
+    background: var(--corPrimária);
+    right: 0;
+    width: 50px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+/* Fazer o restante do JS (2ª e 3ª funções) */
